@@ -16,7 +16,7 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="text-5xl md:text-6xl font-bold text-white"
         >
-          Hi, I’m <span className="text-blue-600">Mehdi</span>
+          Hello, I’m <span className="text-blue-600">Mehdi</span>
         </motion.h1>
 
         {/* Subtitle */}
