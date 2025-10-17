@@ -48,7 +48,7 @@ const Homepage = () => {
         <p className="mb-8 text-lg">Let’s build something amazing together.</p>
         <a
           href="/contact"
-          className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold rounded-full shadow-lg hover:bg-blue-50 transition"
+          className="inline-block px-8 py-4 text-blue-600 font-semibold rounded-full shadow-lg hover:bg-blue-600 hover:text-blue-100 transition"
         >
           Contact Me
         </a>

@@ -1,14 +1,12 @@
 import React from "react";
 import { notFound } from "next/navigation";
 
-
 type Portfolio = {
   title: string;
   summary: string;
   details: string[];
 };
 
-const portfolioData: { [key: string]: Portfolio } = {
 const portfolioData: { [key: string]: Portfolio } = {
   "1": {
     title: "Personal Portfolio",
@@ -40,12 +38,6 @@ const portfolioData: { [key: string]: Portfolio } = {
       "Dark/light mode toggle",
     ],
   },
-};
-
-type Portfolio = {
-  title: string;
-  summary: string;
-  details: string[];
 };
 
 interface PortfolioDetailProps {
