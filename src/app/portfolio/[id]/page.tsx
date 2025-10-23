@@ -40,12 +40,12 @@ const portfolioData: Record<string, Portfolio> = {
   },
 };
 
-interface PortfolioDetailProps {
+// ✅ Define params inline — Next.js App Router standard
+export default function PortfolioDetailPage({
+  params,
+}: {
   params: { id: string };
-}
-
-// ✅ Keep this synchronous (no async needed)
-const PortfolioDetailPage = ({ params }: PortfolioDetailProps) => {
+}) {
   const item = portfolioData[params.id];
 
   if (!item) return notFound();
@@ -62,6 +62,4 @@ const PortfolioDetailPage = ({ params }: PortfolioDetailProps) => {
       </ul>
     </main>
   );
-};
-
-export default PortfolioDetailPage;
+}
