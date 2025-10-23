@@ -44,9 +44,10 @@ interface PortfolioDetailProps {
   params: { id: string };
 }
 
-// ✅ Make this async to match Next.js dynamic route expectations
-const PortfolioDetailPage = async ({ params }: PortfolioDetailProps) => {
+// ✅ Keep this synchronous (no async needed)
+const PortfolioDetailPage = ({ params }: PortfolioDetailProps) => {
   const item = portfolioData[params.id];
+
   if (!item) return notFound();
 
   return (
@@ -54,7 +55,7 @@ const PortfolioDetailPage = async ({ params }: PortfolioDetailProps) => {
       <h1 className="text-4xl font-bold mb-4 text-blue-500">{item.title}</h1>
       <p className="mb-6 text-lg">{item.summary}</p>
       <h2 className="text-2xl font-semibold mb-3">Project Details</h2>
-      <ul className="list-disc list-inside mb-8">
+      <ul className="list-disc list-inside mb-8 space-y-1">
         {item.details.map((detail, idx) => (
           <li key={idx}>{detail}</li>
         ))}
