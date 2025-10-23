@@ -53,7 +53,6 @@ const Homepage = () => {
           Contact Me
         </a>
       </section>
-      <Footer />
     </>
   );
 };
