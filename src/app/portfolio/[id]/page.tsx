@@ -7,7 +7,7 @@ type Portfolio = {
   details: string[];
 };
 
-const portfolioData: { [key: string]: Portfolio } = {
+const portfolioData: Record<string, Portfolio> = {
   "1": {
     title: "Personal Portfolio",
     summary: "A modern portfolio website to showcase my work and skills.",
@@ -44,8 +44,9 @@ interface PortfolioDetailProps {
   params: { id: string };
 }
 
-const PortfolioDetailPage = ({ params }: PortfolioDetailProps) => {
-  const item: Portfolio | undefined = portfolioData[params.id];
+// ✅ Make this async to match Next.js dynamic route expectations
+const PortfolioDetailPage = async ({ params }: PortfolioDetailProps) => {
+  const item = portfolioData[params.id];
   if (!item) return notFound();
 
   return (
@@ -54,7 +55,7 @@ const PortfolioDetailPage = ({ params }: PortfolioDetailProps) => {
       <p className="mb-6 text-lg">{item.summary}</p>
       <h2 className="text-2xl font-semibold mb-3">Project Details</h2>
       <ul className="list-disc list-inside mb-8">
-        {item.details.map((detail: string, idx: number) => (
+        {item.details.map((detail, idx) => (
           <li key={idx}>{detail}</li>
         ))}
       </ul>
