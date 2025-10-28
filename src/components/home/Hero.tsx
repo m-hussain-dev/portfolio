@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6 py-12">
+    <section className="min-h-screen max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6 py-12 ">
       {/* Left: Text Content */}
       <div className="flex flex-col justify-center items-start text-start">
         {/* Animated Intro Text */}
@@ -38,11 +38,14 @@ export default function Hero() {
           className="mt-8 flex space-x-4"
         >
           <Link
-            href="/projects"
+            href="/Mehdi_Hussain_CV.pdf"
+            target="_blank"
+            download
             className="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition"
           >
-            View Projects
+            Download CV
           </Link>
+
           <Link
             href="/contact"
             className="px-6 py-3 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition"

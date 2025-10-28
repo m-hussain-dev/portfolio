@@ -1,8 +1,9 @@
+"use client";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10 mt-16">
+    <footer className=" text-gray-300 py-10 ">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
@@ -51,27 +52,20 @@ export default function Footer() {
           {/* Social Links */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-3">Follow Me</h3>
-            <div className="flex space-x-5">
+            <div className="flex flex-col space-y-2">
               <Link
-                href="https://github.com/"
+                href="https://github.com/m-hussain-dev"
                 target="_blank"
                 className="hover:text-blue-400 transition"
               >
-                <i className="fab fa-github text-2xl"></i>
+                <i className="fab fa-github text-2xl"> GitHub</i>
               </Link>
               <Link
-                href="https://linkedin.com/"
+                href="https://www.linkedin.com/in/mehdi-hussain-04b537221/"
                 target="_blank"
-                className="hover:text-blue-400 transition"
+                className="hover:text-blue-400 transition "
               >
-                <i className="fab fa-linkedin text-2xl"></i>
-              </Link>
-              <Link
-                href="https://twitter.com/"
-                target="_blank"
-                className="hover:text-blue-400 transition"
-              >
-                <i className="fab fa-twitter text-2xl"></i>
+                <i className="fab fa-linkedin text-2xl">LinkedIn</i>
               </Link>
             </div>
           </div>
