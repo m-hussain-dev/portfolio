@@ -55,7 +55,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Floating Animation */}
-        <motion.div
+        {/* <motion.div
           initial={{ y: 0 }}
           animate={{ y: [0, -15, 0] }}
           transition={{ repeat: Infinity, duration: 3 }}
@@ -75,7 +75,7 @@ export default function Hero() {
               d="M19 9l-7 7-7-7"
             />
           </svg>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Right: Image */}
