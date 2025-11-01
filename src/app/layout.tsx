@@ -36,8 +36,8 @@ export default function RootLayout({
         {/* Main page content */}
         <main className="flex-grow">{children}</main>
 
-        {/* Footer visible on all pages */}
-        {/* <Footer /> */}
+        {/* Footer visible on all pages
+        <Footer /> */}
 
         {/* Toast notifications */}
         <Toaster position="top-right" reverseOrder={false} />
