@@ -10,7 +10,8 @@ export default function Footer() {
           <div>
             <h2 className="text-2xl font-bold text-white">Mehdi.dev</h2>
             <p className="mt-3 text-gray-400">
-              Building modern, fast, and user-friendly web experiences.
+              Turning ideas into interactive, beautiful web experiences with
+              code and creativity.
             </p>
           </div>
 
@@ -19,7 +20,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-3">
               Quick Links
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               <li>
                 <Link href="/" className="hover:text-blue-400 transition">
                   Home
@@ -52,29 +53,49 @@ export default function Footer() {
           {/* Social Links */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-3">Follow Me</h3>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-1">
               <Link
                 href="https://github.com/m-hussain-dev"
                 target="_blank"
                 className="hover:text-blue-400 transition"
               >
-                <i className="fab fa-github text-2xl"> GitHub</i>
+                <i className="fab fa-github text-xl"> GitHub</i>
               </Link>
               <Link
                 href="https://www.linkedin.com/in/mehdi-hussain-04b537221/"
                 target="_blank"
                 className="hover:text-blue-400 transition "
               >
-                <i className="fab fa-linkedin text-2xl">LinkedIn</i>
+                <i className="fab fa-linkedin text-xl">LinkedIn</i>
               </Link>
             </div>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-10 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
-          © {new Date().getFullYear()} Mehdi.dev | All rights reserved.
-        </div>
+        <footer className="mt-10 border-t border-gray-700 pt-6 text-gray-400 text-sm">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left space-y-4 md:space-y-0 px-4">
+            {/* Left */}
+            <p>© {new Date().getFullYear()} Mehdi.dev</p>
+
+            {/* Center */}
+            <div className="flex items-center space-x-2">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+              </span>
+              <span className="text-white">
+                Available for a full-time position
+              </span>
+            </div>
+
+            {/* Right */}
+            <p>
+              Made by{" "}
+              <span className="text-white font-medium">Mehdi Hussain</span>
+            </p>
+          </div>
+        </footer>
       </div>
     </footer>
   );

@@ -26,8 +26,8 @@ export default function Hero() {
           transition={{ delay: 0.5, duration: 1 }}
           className="mt-4 text-lg md:text-xl text-white max-w-xl"
         >
-          A passionate Frontend Developer skilled in React, Next.js, and modern
-          web design.
+          Where creativity meets precision — crafting digital experiences that
+          connect and inspire.
         </motion.p>
 
         {/* Buttons */}
