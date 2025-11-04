@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
+import WhatsAppButton from "@/components/home/WhatsApp";
 
-export default function Page() {
+export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
@@ -41,50 +43,81 @@ export default function Page() {
   };
 
   return (
-    <div className="max-w-lg mx-auto py-12 px-6">
-      <h1 className="text-3xl font-bold mb-6 text-center mt-20">Contact Me</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 px-6 py-16 relative">
+      {/* Header */}
+      <motion.h1
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl md:text-5xl font-extrabold text-white text-center mb-10"
+      >
+        Get in Touch
+      </motion.h1>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={form.name}
-          onChange={handleChange}
-          className="w-full border rounded-lg p-3"
-          required
-        />
+      {/* Contact Form Card */}
+      <motion.form
+        onSubmit={handleSubmit}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="w-full max-w-md bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/20 space-y-5"
+      >
+        <div>
+          <label className="block text-gray-200 mb-2 font-medium">Name</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            value={form.name}
+            onChange={handleChange}
+            className="w-full p-3 rounded-lg bg-white/5 border border-white/20 text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none transition"
+            required
+          />
+        </div>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={form.email}
-          onChange={handleChange}
-          className="w-full border rounded-lg p-3"
-          required
-        />
+        <div>
+          <label className="block text-gray-200 mb-2 font-medium">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email"
+            value={form.email}
+            onChange={handleChange}
+            className="w-full p-3 rounded-lg bg-white/5 border border-white/20 text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none transition"
+            required
+          />
+        </div>
 
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          value={form.message}
-          onChange={handleChange}
-          className="w-full border rounded-lg p-3"
-          rows={5}
-          required
-        />
+        <div>
+          <label className="block text-gray-200 mb-2 font-medium">
+            Message
+          </label>
+          <textarea
+            name="message"
+            placeholder="Your message..."
+            value={form.message}
+            onChange={handleChange}
+            rows={5}
+            className="w-full p-3 rounded-lg bg-white/5 border border-white/20 text-gray-100 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 outline-none transition resize-none"
+            required
+          />
+        </div>
 
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+          className="w-full py-3 rounded-lg font-semibold text-lg bg-blue-600 text-white hover:bg-blue-700 transition disabled:opacity-60"
         >
           {loading ? "Sending..." : "Send Message"}
         </button>
-      </form>
 
-      {status && <p className="text-center mt-4">{status}</p>}
+        {status && (
+          <p className="text-center mt-4 text-sm text-gray-200">{status}</p>
+        )}
+      </motion.form>
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton />
     </div>
   );
 }
