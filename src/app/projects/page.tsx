@@ -6,12 +6,20 @@ import ProjectCard from "@/components/projects/ProjectCard";
 // Demo projects data - replace with your actual projects
 const projects = [
   {
-    title: "Modern E-Commerce Platform",
+    title: "Online Transport System",
     description:
-      "A sophisticated e-commerce platform featuring real-time inventory tracking, AI-powered product recommendations, and seamless payment integration. Built with cutting-edge technologies for optimal performance and user experience.",
+      "A full-featured booking platform for cars, buses, and pickups with integrated driver tracking, secure login system, and an admin dashboard for trip management.",
     imageUrl: "/projects/ecommerce.jpg",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Redis"],
-    category: "Full Stack",
+    technologies: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT Authentication",
+      "Tailwind CSS",
+    ],
+
+    category: "MERN Stack",
   },
   {
     title: "AI-Driven Content Studio",
@@ -102,10 +110,11 @@ export default function ProjectsPage() {
         transition={{ duration: 0.7, delay: 0.5 }}
         className="text-center mt-20"
       >
-        <div className="inline-block p-px bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 rounded-full">
+        <div className="group inline-block p-[2px] bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 rounded-full relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 group-hover:bg-[length:400%] transition-all duration-700 bg-[length:100%] animate-shimmer opacity-0 group-hover:opacity-100"></div>
           <a
             href="/contact"
-            className="block px-8 py-3 bg-black rounded-full hover:bg-blue-950 transition-colors duration-300"
+            className="relative block px-8 py-3 bg-black rounded-full transition-colors duration-300"
           >
             <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-semibold text-lg">
               Start a Project Together
