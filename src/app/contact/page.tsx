@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import WhatsAppButton from "@/components/home/WhatsApp";
+import toast from "react-hot-toast";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -18,7 +18,9 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setStatus("");
+
+    // Create a loading toast that will be updated based on the response
+    const loadingToast = toast.loading("Sending your message...");
 
     try {
       const res = await fetch("/api/contact", {
@@ -30,13 +32,19 @@ export default function ContactPage() {
       const data = await res.json();
 
       if (res.ok) {
-        setStatus("✅ Message sent successfully!");
+        // Update loading toast to success
+        toast.success("Message sent successfully!", { id: loadingToast });
+        // Reset form
         setForm({ name: "", email: "", message: "" });
       } else {
-        setStatus(`❌ Failed to send: ${data.error}`);
+        // Update loading toast to error
+        toast.error(`Failed to send: ${data.error}`, { id: loadingToast });
       }
     } catch (err) {
-      setStatus("❌ Something went wrong.");
+      // Update loading toast to error
+      toast.error("Something went wrong. Please try again.", {
+        id: loadingToast,
+      });
     } finally {
       setLoading(false);
     }
@@ -49,7 +57,7 @@ export default function ContactPage() {
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-4xl md:text-5xl font-extrabold text-white text-center mb-10"
+        className="text-4xl md:text-5xl font-extrabold text-white text-center mt-10 mb-10"
       >
         Get in Touch
       </motion.h1>
@@ -110,10 +118,6 @@ export default function ContactPage() {
         >
           {loading ? "Sending..." : "Send Message"}
         </button>
-
-        {status && (
-          <p className="text-center mt-4 text-sm text-gray-200">{status}</p>
-        )}
       </motion.form>
 
       {/* Floating WhatsApp Button */}

@@ -110,7 +110,7 @@ const AboutPage = () => {
 
             {
               year: "Jan2024 - Mar2024",
-              role: "Enternship at Dynamic Leo",
+              role: "Internship at Dynamic Leo",
             },
           ].map((item, index) => (
             <motion.li
@@ -123,11 +123,14 @@ const AboutPage = () => {
                 ease: "easeOut",
               }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative flex items-start"
             >
-              <div className="absolute -left-[10px] w-4 h-4 bg-blue-600 rounded-full"></div>
-              <p className="font-bold">{item.year}</p>
-              <p className="text-gray-300">{item.role}</p>
+              <div className="w-4 h-4 mt-1 mr-2 bg-blue-600 rounded-full"></div>
+              <div>
+                {" "}
+                <p className="font-bold">{item.year}</p>
+                <p className="text-gray-300">{item.role}</p>
+              </div>
             </motion.li>
           ))}
         </ol>
