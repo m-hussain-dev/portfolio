@@ -8,13 +8,20 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        shimmer: "shimmer 2s linear infinite",
+        shimmer: "shimmer 3s linear infinite",
       },
       keyframes: {
         shimmer: {
-          "0%": { "background-position": "100% 0" },
-          "100%": { "background-position": "-100% 0" },
+          to: {
+            "background-position": "200% center",
+          },
         },
+      },
+      backgroundSize: {
+        auto: "auto",
+        cover: "cover",
+        contain: "contain",
+        "200%": "200%",
       },
     },
   },

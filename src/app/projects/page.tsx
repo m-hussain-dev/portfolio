@@ -9,7 +9,7 @@ const projects = [
     title: "Online Transport System",
     description:
       "A full-featured booking platform for cars, buses, and pickups with integrated driver tracking, secure login system, and an admin dashboard for trip management.",
-    imageUrl: "/projects/ecommerce.jpg",
+    imageUrl: "/projects/eco.png",
     technologies: [
       "React.js",
       "Node.js",
@@ -110,13 +110,17 @@ export default function ProjectsPage() {
         transition={{ duration: 0.7, delay: 0.5 }}
         className="text-center mt-20"
       >
-        <div className="group inline-block p-[2px] bg-gradient-to-r from-blue-500 via-blue-400 to-blue-600 rounded-full relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 group-hover:bg-[length:400%] transition-all duration-700 bg-[length:100%] animate-shimmer opacity-0 group-hover:opacity-100"></div>
+        <div className="group relative inline-block transform transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105">
+          {/* Animated border/glow effect */}
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 rounded-full opacity-75 blur-sm group-hover:opacity-100 transition-opacity animate-shimmer"></div>
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-600 rounded-full group-hover:opacity-100"></div>
+
+          {/* Button content */}
           <a
             href="/contact"
-            className="relative block px-8 py-3 bg-black rounded-full transition-colors duration-300"
+            className="relative block px-8 py-3 bg-black rounded-full"
           >
-            <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-semibold text-lg">
+            <span className="relative bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-semibold text-lg">
               Start a Project Together
             </span>
           </a>
